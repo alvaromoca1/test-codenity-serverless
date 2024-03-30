@@ -1,0 +1,23 @@
+
+service: codenity-day-serverless
+# app and org for use with dashboard.serverless.com
+#app: your-app-name
+#org: your-org-name
+
+frameworkVersion: "3"
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+
+
+functions:
+  helloCodenity:
+    handler: src/handlers/handler.handlerCodenity
+    name: handlerCodenity
+
+plugins:
+  - serverless-esbuild
+  - serverless-deployment-bucket
+  - serverless-offline
+  - serverless-iam-roles-per-function
